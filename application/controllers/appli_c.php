@@ -12,10 +12,10 @@ class appli_c extends CI_Controller {
 	public function index()
 	{
 		$donnees['titre']="Connexion";
-		if( $this->session->userdata('droit')==2){
+		if( $this->session->userdata('idDroit')==2){
             redirect('admin_c');
         }
-        if( $this->session->userdata('droit')==1){
+        if( $this->session->userdata('idDroit')==1){
             redirect('client_c');
         }
 		$this->load->view('entete',$donnees);
@@ -24,20 +24,19 @@ class appli_c extends CI_Controller {
 	}
 	
 	public function inscription(){
-		$this->form_validation->set_rules('login','login','trim|required');
+		$this->form_validation->set_rules('nom','Nom','trim|required');
         $this->form_validation->set_rules('email','Email','trim|required|valid_email');
-        $this->form_validation->set_rules('pass','Mot de passe','trim|required|matches[pass2]');
+        $this->form_validation->set_rules('mdp','Mot de passe','trim|required|matches[pass2]');
         $this->form_validation->set_rules('pass2','Mot de passe','trim|required');
                 /* rappeler la vue à la fin de la méthode */
         if($this->form_validation->run()){
             if(! $this->application_m->test_email($this->input->post('email'))){
-                if(! $this->application_m->test_login($this->input->post('login'))){
+                if(! $this->application_m->test_login($this->input->post('nom'))){
                     $donnees= array(
-                        'login'=>$this->input->post('login'),
+                        'nom'=>$this->input->post('nom'),
                         'email'=>$this->input->post('email'),
-                        'pass'=>$this->input->post('pass'), //$this->encrypt->encode(  ; md5(
-                        'droit'=>1,
-                        'valide'=>0
+                        'mdp'=>$this->input->post('mdp'), //$this->encrypt->encode(  ; md5(
+                        'idDroit'=>1
                     );
                     $this->application_m->add_user($donnees);
                     // fin d'ajout et redirection
@@ -63,16 +62,16 @@ class appli_c extends CI_Controller {
         if ($this->application_m->EST_connecter()){
             redirect('appli_c/aff_deconnexion');
         }
-        $this->form_validation->set_rules('login','login','trim|required');
-        $this->form_validation->set_rules('pass','Mot de passe','trim|required');
+        $this->form_validation->set_rules('nom','nom','trim|required');
+        $this->form_validation->set_rules('mdp','Mot de passe','trim|required');
         /* rappeler la vue à la fin de la méthode */
         if($this->form_validation->run()){
             $donnees= array(
-                'login'=>$this->input->post('login'),
-                'pass'=>$this->input->post('pass')
+                'nom'=>$this->input->post('nom'),
+                'mdp'=>$this->input->post('mdp')
             );
             $donnees_session=array();
-            if($this->application_m->verif_connexion($donnees,$donnees_session))                          // and valide ==1
+            if($this->application_m->verif_connexion($donnees,$donnees_session))
             {
                 $this->session->set_userdata($donnees_session);
                 redirect('appli_c/aff_connexion');
@@ -90,13 +89,12 @@ class appli_c extends CI_Controller {
     }
 
     public function aff_deconnexion(){
-        if( $this->session->userdata('droit')==2){
+        if( $this->session->userdata('idDroit')==2){
             redirect('admin_c');
         }
-        if( $this->session->userdata('droit')==1){
+        if( $this->session->userdata('idDroit')==1){
             redirect('client_c');
         }
-        print_r($this->session->all_userdata());
         $donnees['titre']="deconnexion";
 		$this->load->view('entete',$donnees);
         $this->load->view('appli_index',$donnees);

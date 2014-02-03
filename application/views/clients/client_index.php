@@ -1,7 +1,7 @@
 <div id="container">
     <div>
 
-        <h1>Bonjour <?= $this->session->userdata('login')?></h1>
+        <h1>Bonjour <?= $this->session->userdata('nom')?></h1>
 
         <?php echo form_open('appli_c/deconnexion'); ?>
         <input class="bouton" type="submit" value="Deconnexion" />

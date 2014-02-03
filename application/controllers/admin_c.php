@@ -9,7 +9,7 @@ class Admin_c extends CI_Controller {
     }
     public function index()
     {
-        if($this->session->userdata('droit')!=2){
+        if($this->session->userdata('idDroit')!=2){
             redirect('appli_c');
         }
         $donnees['titre']="Gestion des clients";

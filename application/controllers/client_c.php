@@ -9,7 +9,7 @@ class Client_c extends CI_Controller {
     }
     public function index()
     {
-        if($this->session->userdata('droit')!=1){
+        if($this->session->userdata('idDroit')!=1){
             redirect('appli_c');
         }
         $donnees['titre']="Membre de l'association";

@@ -3,15 +3,15 @@
 class Application_m extends CI_Model {
     public function add_user($donnees)
     {
-        $sql = "INSERT membres VALUES (NULL,\"".$donnees['login']."\",\"".$donnees['email']."\",
-        \"".$donnees['pass']."\",1,0) ;";
+        $sql = "INSERT utilisateur VALUES (NULL,\"".$donnees['nom']."\",\"".$donnees['mdp']."\",
+        \"".$donnees['email']."\",1) ;";
         $this->db->query($sql);
     }
 
     public function verif_connexion($donnees,&$donnees_resultat)
     {
-        $sql = "SELECT droit,login,email,valide from membres WHERE login=\"".$donnees['login']."\"
-        and pass=\"".$donnees['pass']."\";";
+        $sql = "SELECT idDroit,nom,email from utilisateur WHERE nom=\"".$donnees['nom']."\"
+        and mdp=\"".$donnees['mdp']."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()==1)
         {
@@ -25,7 +25,7 @@ class Application_m extends CI_Model {
 
     function EST_connecter()
     {
-         return $this->session->userdata('login') &&  $this->session->userdata('droit') ;
+         return $this->session->userdata('nom') &&  $this->session->userdata('idDroit') ;
     }
 
     public function deconnexion()
@@ -35,16 +35,16 @@ class Application_m extends CI_Model {
     }
     public function test_email($email)
     {
-        $sql = "SELECT email  from membres WHERE email=\"".$email."\";";
+        $sql = "SELECT email from utilisateur WHERE email=\"".$email."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()>=1)
             return true;
         else
             return false;
     }
-    public function test_login($login)
+    public function test_login($nom)
     {
-        $sql = "SELECT login  from membres WHERE login=\"".$login."\";";
+        $sql = "SELECT nom from utilisateur WHERE nom=\"".$nom."\";";
         $query=$this->db->query($sql);
         if($query->num_rows()>=1)
             return true;

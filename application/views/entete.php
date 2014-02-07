@@ -24,15 +24,28 @@
           <a class="navbar-brand" href="/fruitslegumes/index.php">Aux BeauFruits & Légumes</a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+
+        <?php if($titre):?> 
+        	<?php if(!isset($droit)):?>
+        		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+				<?php echo form_open('appli_c/deconnexion',$attributes); ?>
+				<label class="texte">Bonjour <?= $this->session->userdata('nom')?></label>
+        		<button class="btn btn-success3"><?= anchor('appli_c/deconnexion', 'Deconnexion') ?></button>
+        		<?php echo form_close(); ?>
+        	<?php else: ?>	
+	      		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+	 		  	<?php echo form_open('appli_c/aff_connexion',$attributes); ?>
+	            <div class="form-group">
+	              <input class="form-control" placeholder="Login" type="text" name="nom" value="<?php echo set_value('nom'); ?>" />
+	            </div>
+	            <div class="form-group">
+	            	 <input class="form-control" placeholder="Mot de passe" type="password" name="mdp" value="<?= set_value('mdp'); ?>" />
+	            </div>
+	            <button type="submit" class="btn btn-success">Connexion</button>
+	            <button class="btn btn-success2"><?= anchor('appli_c/inscription', 'Inscription') ?></button>
+            <?php endif; ?>
+	    <?php echo form_close(); ?>
+	    <?php endif; ?>
         </div><!--/.navbar-collapse -->
       </div>
     </div>

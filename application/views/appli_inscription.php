@@ -1,5 +1,7 @@
 <div id="container2">
     <div>
+    	<link href="<?php echo base_url()?>dist/css/moncss.css" rel="stylesheet">
+
         <h1>Inscription</h1>
         <?php echo form_open('appli_c/inscription'); ?>
 

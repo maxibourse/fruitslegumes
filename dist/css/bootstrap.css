@@ -2119,6 +2119,31 @@ fieldset[disabled] .btn-primary.active {
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
+
+.btn-success2 {
+  background-color: #FF0000;
+  border-color: #FF0000;
+}
+
+.btn-success3 {
+  background-color: #0000FF;
+  border-color: #0000FF;
+}
+
+a:link 
+{ 
+	color: #fff;	
+ 	text-decoration:none; 
+} 
+
+a{
+  color: #fff;	
+}
+
+a:hover{
+  color: #fff;		
+}
+
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
@@ -4734,6 +4759,14 @@ a.list-group-item-warning.active:focus {
   color: #a94442;
   background-color: #f2dede;
 }
+
+.texte{
+  color: #fff;
+  font-size: 18px;
+  margin-right:10px;
+  font-family:"Arial";
+}
+
 a.list-group-item-danger {
   color: #a94442;
 }

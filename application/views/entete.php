@@ -26,11 +26,13 @@
         <div class="navbar-collapse collapse">
 
         <?php if($titre):?> 
+        	<?php $attributes2 = array('class' => 'decoration'); ?>
         	<?php if(!isset($droit)):?>
         		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
+        		<?php $attributes2 = array('class' => 'decoration'); ?>
 				<?php echo form_open('appli_c/deconnexion',$attributes); ?>
 				<label class="texte">Bonjour <?= $this->session->userdata('nom')?></label>
-        		<button class="btn btn-success3"><?= anchor('appli_c/deconnexion', 'Deconnexion') ?></button>
+        		<button class="btn btn-success3"><?= anchor('appli_c/deconnexion', 'Deconnexion',$attributes2) ?></button>
         		<?php echo form_close(); ?>
         	<?php else: ?>	
 	      		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
@@ -42,7 +44,7 @@
 	            	 <input class="form-control" placeholder="Mot de passe" type="password" name="mdp" value="<?= set_value('mdp'); ?>" />
 	            </div>
 	            <button type="submit" class="btn btn-success">Connexion</button>
-	            <button class="btn btn-success2"><?= anchor('appli_c/inscription', 'Inscription') ?></button>
+	            <button class="btn btn-success2"><?= anchor('appli_c/inscription', 'Inscription',$attributes2) ?></button>
             <?php endif; ?>
 	    <?php echo form_close(); ?>
 	    <?php endif; ?>

@@ -2136,11 +2136,11 @@ a:link
  	text-decoration:none; 
 } 
 
-a{
+a.decoration{
   color: #fff;	
 }
 
-a:hover{
+a.decoration:hover{
   color: #fff;		
 }
 

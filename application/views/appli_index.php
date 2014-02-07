@@ -13,7 +13,7 @@
     </li>                          
   </ul>
 </div>
-<div style="visibility:hidden">
+<div>
 	<h1>Connexion</h1>
 		<?php if($titre):?>
 	    <?php echo form_open('appli_c/aff_connexion'); ?>

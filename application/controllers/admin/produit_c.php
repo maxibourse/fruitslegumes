@@ -21,10 +21,8 @@ class Produit_c extends CI_Controller {
 		//'contenu'=>'produit/produit_creer_produit'
 		);
 		$this -> load -> view('entete', $donnees);
-		echo "<h1>" . "Ajouter un nouveau produit" . "</h1>" . "<label>Nom du produit </label>"
-		 . "<input type='text' value=''>" . "<br>" . "<input type='text' value=''>";
+		echo "<h1>" . "Ajouter un nouveau produit" . "</h1>" . "<label>Nom du produit </label>" . "<input type='text' value=''>" . "<br>" . "<input type='text' value=''>";
 		$this -> load -> view('pied', $donnees);
-
 	}
 
 }

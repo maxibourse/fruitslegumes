@@ -23,8 +23,11 @@ class Produit_c extends CI_Controller {
 	    $donnees['mesproduits'] = $this -> produit_m -> recup_typePrix();
 		$this -> load -> view('admin/nouveau_produit_v', $donnees);
 		$this -> load -> view('entete', $donnees);
+<<<<<<< HEAD
+=======
+		echo "<h1>" . "Ajouter un nouveau produit" . "</h1>" . "<label>Nom du produit </label>" . "<input type='text' value=''>" . "<br>" . "<input type='text' value=''>";
+>>>>>>> 6c0a627aa271dea9a1512113002c39a4666c2a59
 		$this -> load -> view('pied', $donnees);
-
 	}
 
 }

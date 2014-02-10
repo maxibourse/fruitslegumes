@@ -2,6 +2,6 @@
     <div>
 
         <h1>Gestion des clients et des commandes</h1>
-
+		<a href="<?php echo site_url('admin/produit_c')?>">Gestion des produits</a>
 	</div>
 </div>

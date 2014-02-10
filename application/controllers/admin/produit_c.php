@@ -20,9 +20,9 @@ class Produit_c extends CI_Controller {
 		$donnees = array('titre' => 'Ajouter un produit'
 		//'contenu'=>'produit/produit_creer_produit'
 		);
+	    $donnees['mesproduits'] = $this -> produit_m -> recup_typePrix();
+		$this -> load -> view('admin/nouveau_produit_v', $donnees);
 		$this -> load -> view('entete', $donnees);
-		echo "<h1>" . "Ajouter un nouveau produit" . "</h1>" . "<label>Nom du produit </label>"
-		 . "<input type='text' value=''>" . "<br>" . "<input type='text' value=''>";
 		$this -> load -> view('pied', $donnees);
 
 	}

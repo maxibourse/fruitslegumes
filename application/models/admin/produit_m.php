@@ -23,6 +23,23 @@ class Produit_m extends CI_Model{
 		
 	
 	}
+	
+	function recup_typePrix()
+	{
+		$q=$this->db->select('designation')->from('typePrix')->order_by('designation', 'desc')->get();
+		
+		if($q->num_rows()>0)
+		{	
+			foreach($q->result() as $row)
+			{
+				$donnees[] = $row;
+			}
+			
+			return $donnees;
+		}
+		
+	
+	}
 
 }
 ?>

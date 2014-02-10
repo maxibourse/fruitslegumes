@@ -5,6 +5,7 @@
 	<title><?php echo $titre ?></title>
 	<link href="<?php echo base_url()?>dist/css/bootstrap.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>dist/css/jumbotron.css" rel="stylesheet">
+		<link href="<?php echo base_url()?>dist/css/moncss.css" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url()?>/assets/js/css/craftyslide.css" />
 	
 	<script src="assets/js/jquery-1.10.2.js"></script>

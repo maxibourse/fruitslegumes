@@ -99,7 +99,8 @@ p.footer {
 	font-style: italic;
 }
 
-a {
+
+#lien{
 	text-decoration: none;
-	color: red;
+	color: blue;
 }

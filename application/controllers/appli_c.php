@@ -12,13 +12,10 @@ class appli_c extends CI_Controller {
 	public function index()
 	{
 		$donnees['titre']="Connexion";
-		$donnees['droit']=0;
 		if( $this->session->userdata('idDroit')==2){
-			$donnees['droit']=2;
 		    redirect('admin_c');
         }
         if( $this->session->userdata('idDroit')==1){
-        	$donnees['droit']=1;
             redirect('client_c');
         }
 		$this->load->view('entete',$donnees);

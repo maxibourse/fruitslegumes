@@ -26,11 +26,11 @@
         <div class="navbar-collapse collapse">
 
         <?php if($titre):?> 
+        	<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
         	<?php $attributes2 = array('class' => 'decoration'); ?>
-        	<?php if(!isset($droit)):?>
-        		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
-        		<?php $attributes2 = array('class' => 'decoration'); ?>
-				<?php echo form_open('appli_c/deconnexion',$attributes); ?>
+        	
+        	<?php if($this->session->userdata('idDroit')==1 || $this->session->userdata('idDroit')==2):?>
+        		<?php echo form_open('appli_c/deconnexion',$attributes); ?>
 				<label class="texte">Bonjour <?= $this->session->userdata('nom')?></label>
         		<button class="btn btn-success3"><?= anchor('appli_c/deconnexion', 'Deconnexion',$attributes2) ?></button>
         		<?php echo form_close(); ?>

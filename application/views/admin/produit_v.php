@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Vue des produits</title>
-</head>
-<body>
-	<h1><?php echo $titre ?></h1>
-	les produits
-	
+<h1><?php echo $titre ?></h1>
+	Liste des produits
+	<br /><br />
 	<?php if($mesproduits !=null): ?>
 	<table border="2">
 	
+	
+	<tr>
+		<td width="10%" align="center"><b>Disponibilité</b></td>
+		<td width="10%" align="center"><b>Nom du produit</b> </td>
+		<td width="30%" align="center"><b>Commentaire</b> </td>
+		<td width="10%" align="center"><b>Prix </b> </td>
+		<td width="10%" align="center"><b>Code du produit </b></td>
+		<td width="10%" align="center"><b>Origine </b></td>
+	</tr>
 	<?php foreach($mesproduits as $r): ?>
 	
 	<tr>
-		<td><?=$r -> disponible ?></td>
-		<td><?=$r -> designation ?></td>
-		<td><?=$r -> prix ?></td>
-		</tr>
-		<?php endforeach; ?>
-		</table>
-		<?php endif; ?>
+		<td width="10%" align="center"><?=$r -> disponible ?></td>
+		<td width="10%" align="center"><?=$r -> designation ?></td>
+		<td width="30%" align="center"><?=$r -> commentaire ?></td>
+		<td width="10%" align="center"><?=$r -> prix ." €"?></td>
+		<td width="10%" align="center"><?=$r -> codeProduit ?></td>
+		<td width="10%" align="center"><?=$r -> idOrigine ?></td>
 		
-		<a href="<?php echo site_url('admin/produit_c/creer_produit')?>">Ajouter un produit</a>
-
-</body>
-</html>
+		
+	</tr>
+		<?php endforeach; ?>
+	</table>
+		<?php endif; ?>
+		<br><br>
+		<a href="<?php echo site_url('admin/produit_c/nouveau_produit')?>">Ajouter un produit</a>

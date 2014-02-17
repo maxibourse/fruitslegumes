@@ -14,20 +14,59 @@ class Produit_c extends CI_Controller {
 		$this -> load -> view('pied', $donnees);
 
 	}
+	
+	public function rss() {
+		header('content:text/xml');
+		$donnees['mesproduits'] = $this -> produit_m -> get_all();
+		$this -> load -> view('admin/vue_rss', $donnees);
+	}
+	
 
-	public function creer_produit() {
+	public function nouveau_produit() {
 
 		$donnees = array('titre' => 'Ajouter un produit'
 		//'contenu'=>'produit/produit_creer_produit'
 		);
-	    $donnees['mesproduits'] = $this -> produit_m -> recup_typePrix();
-		$this -> load -> view('admin/nouveau_produit_v', $donnees);
-		$this -> load -> view('entete', $donnees);
-<<<<<<< HEAD
-=======
-		echo "<h1>" . "Ajouter un nouveau produit" . "</h1>" . "<label>Nom du produit </label>" . "<input type='text' value=''>" . "<br>" . "<input type='text' value=''>";
->>>>>>> 6c0a627aa271dea9a1512113002c39a4666c2a59
+	    $donnees['typePrix'] = $this -> produit_m -> recup_typePrix();
+	    $donnees['origine'] = $this -> produit_m -> recup_origine();	
+		$donnees['categorie'] = $this -> produit_m -> recup_categorie();	
+		
+	    $this -> load -> view('entete', $donnees);
+		$this -> load -> view('admin/nouveau_produit_v',$donnees);
 		$this -> load -> view('pied', $donnees);
+	}
+
+public function ajouterProduit(){
+	
+	$this->form_validation->set_rules('designation','Designation','trim|required');
+	$this->form_validation->set_rules('commentaire','Commentaire','trim|required');
+	$this->form_validation->set_rules('prix','Prix','trim|required');
+	$this->form_validation->set_rules('codeProduit','Code Produit','trim|required');
+	$this->form_validation->set_rules('idTypePrix','Type Produit','trim|required');
+	$this->form_validation->set_rules('idOrigine','Origine','trim|required');
+	$this->form_validation->set_rules('disponible','Disponible','trim|required');
+	$this->form_validation->set_rules('idCategorie','Categorie','trim|required');
+	
+	 if($this->form_validation->run()){
+                    $donnees= array(
+                        'designation'=>$this->input->post('designation'),
+                        'commentaire'=>$this->input->post('commentaire'),
+                        'prix'=>$this->input->post('prix'), 
+                        'idTypePrix'=>$this->input->post('idTypePrix'),
+                        'codeProduit'=>$this->input->post('codeProduit'),
+                        'idOrigine'=>$this->input->post('idOrigine'),
+                        'disponible'=>$this->input->post('disponible'),
+                        'idCategorie'=>$this->input->post('idCategorie')
+                    );
+                    $this->produit_m->ajouterProduit($donnees);
+                    redirect(base_url());
+
+        }
+		$this->load->view('entete',$donnees);
+		$this->load->view('admin/produit_c',$donnees);
+		$this->load->view('pied',$donnees);	
+
+	
 	}
 
 }

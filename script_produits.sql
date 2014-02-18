@@ -107,12 +107,14 @@ INSERT INTO ORIGINE VALUES('',"MAROC");
 
 INSERT INTO TYPEPRIX VALUES('',"Piece");
 INSERT INTO TYPEPRIX VALUES('',"Kg");
+INSERT INTO TYPEPRIX VALUES('',"Piece/Kg");
 
 INSERT INTO LIEU VALUES('',"Belfort Nord");
 INSERT INTO LIEU VALUES('',"Marché des Vosges");
 
-INSERT INTO PRODUITS VALUES('',"Patate","Elles sont bonnes mes patates ",2.78,1,100,1,0,1);
-INSERT INTO PRODUITS VALUES('',"Tomate","",5.78,1,101,2,0,2);
+INSERT INTO PRODUITS VALUES('',"Patate","Elles sont bonnes mes patates ",0.78,1,100,1,0,1);
+INSERT INTO PRODUITS VALUES('',"Tomate","",5.78,2,101,2,1,1);
+INSERT INTO PRODUITS VALUES('',"Banane","",2,3,101,2,1,2);
 
 INSERT INTO UTILISATEUR VALUES('',"maxime","a","adresse@mail.com",1);
 INSERT INTO UTILISATEUR VALUES('',"nicolas","a","adresse@mail.com",2);

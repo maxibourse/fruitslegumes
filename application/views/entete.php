@@ -41,10 +41,10 @@
 	      		<?php $attributes = array('class' => 'navbar-form navbar-right'); ?>
 	 		  	<?php echo form_open('appli_c/aff_connexion', $attributes); ?>
 	            <div class="form-group">
-	              <input class="form-control" placeholder="Login" type="text" name="nom" value="<?php echo set_value('nom'); ?>" />
+	              <input class="form-control control1" placeholder="Login" type="text" name="nom" value="<?php echo set_value('nom'); ?>" />
 	            </div>
 	            <div class="form-group">
-	            	 <input class="form-control" placeholder="Mot de passe" type="password" name="mdp" value="<?= set_value('mdp'); ?>" />
+	            	 <input class="form-control control1" placeholder="Mot de passe" type="password" name="mdp" value="<?= set_value('mdp'); ?>" />
 	            </div>
 	            <button type="submit" class="btn btn-success">Connexion</button>
 	            <button class="btn btn-success2"><?= anchor('appli_c/inscription', 'Inscription', $attributes2) ?></button>

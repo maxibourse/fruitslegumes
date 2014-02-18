@@ -15,12 +15,6 @@ class Produit_c extends CI_Controller {
 
 	}
 	
-	public function rss() {
-		header('content:text/xml');
-		$donnees['mesproduits'] = $this -> produit_m -> get_all();
-		$this -> load -> view('admin/vue_rss', $donnees);
-	}
-	
 
 	public function nouveau_produit() {
 

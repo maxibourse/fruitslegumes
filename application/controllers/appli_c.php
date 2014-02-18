@@ -50,7 +50,7 @@ class appli_c extends CI_Controller {
             }
 
         }
-        $donnees['titre']="inscription";
+        $donnees['titre']="Inscription";
 		$this->load->view('entete',$donnees);
 		$this->load->view('appli_inscription',$donnees);
 		$this->load->view('pied',$donnees);		
@@ -114,13 +114,12 @@ class appli_c extends CI_Controller {
                     $donnees= array(
                         'email'=>$this->input->post('email')
                     );
-                    $this->email->from('noreply@monsite.com','Mon site');
+                    $this->email->from('pilot.max@hotmail.fr','Mon site');
                     $this->email->to($this->input->post('email'),'Mot de passe oublié');
                     $this->email->subject('Votre mot de passe');
                     $this->email->message('<p>Voici un nouveau de passe </p>....');
                     $this->email->send();
-                   // $this->application_m->envoie_email($donnees);
-                    // fin d'ajout et redirection
+                    //fin d'ajout et redirection
                     redirect(base_url());
                 }
             }
@@ -129,12 +128,18 @@ class appli_c extends CI_Controller {
             }
 
         }
-        $donnees['titre']="mot de passe oublié";
+        $donnees['titre']="Mot de passe oublié";
         $this->load->view('entete',$donnees);
         $this->load->view('application_mdp_oublie',$donnees);
 		$this->load->view('pied',$donnees);
 		
     }
+
+	public function rss() {
+		header('content:text/xml');
+		$donnees['mesproduits'] = $this -> produit_m -> get_all();
+		$this -> load -> view('vue_rss', $donnees);
+	}
 }
 
 ?>

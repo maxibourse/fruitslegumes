@@ -3,7 +3,7 @@
 	
 	<item>
 		<title><?=$r -> designation ?></title>
-		<description><?=$r -> prix ?></description>
+		<description>Prix : <?=$r -> prix ?> €</description>
 	</item>
 		<?php endforeach; ?>
 </rss>

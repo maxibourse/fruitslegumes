@@ -9,7 +9,22 @@ $(document).ready(function() {
 
 	$('.navbar-form').submit(function(e) {
 
-		$('input.form-control').each(function(i) {
+		$('input.control1').each(function(i) {
+			if ($(this).val() == "") {
+				$(this).css('border-color', 'red');
+				$(this).css('border-width', '2px');
+				e.preventDefault();
+			}
+			else{
+				$(this).css('border-color', '#1E90FF');
+				$(this).css('border-width', '1px');	
+			}
+		});
+	});
+	
+	$('.formInscription').submit(function(e) {
+
+		$('input.control2').each(function(i) {
 			if ($(this).val() == "") {
 				$(this).css('border-color', 'red');
 				$(this).css('border-width', '2px');

@@ -12,16 +12,12 @@
 }
 
 body {
-	background-color: #fff;
+	background-image:url(/fruitslegumes/assets/images/fond.jpg);	
 	margin: 40px;
 	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	
-}
+	background-repeat : repeat;
 
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
+	
 }
 
 h1 {
@@ -126,11 +122,30 @@ p.footer {
 .piedpage{
 	display:block;
 	position:absolute;
-	height:50px;
+	height:30px;
 	margin-top:5px;
 	margin-bottom:0px;
     bottom:0;
 	right:0;
 	left:0;
-	background-color: black;
+	background-color: #121313;
+	color: white;
+}
+
+a{
+	color:#000000;
+}
+
+#fluxrss{
+	float:left;
+	margin-left:20px;
+}
+
+#rss{
+	color:white;
+}
+
+#copyright{
+	float:right;
+	margin-right:20px;
 }

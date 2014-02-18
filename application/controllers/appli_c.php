@@ -22,7 +22,6 @@ class appli_c extends CI_Controller {
 		$this->load->view('appli_index',$donnees);
 		$this->load->view('pied',$donnees);
 	}
-	
 	public function inscription(){
 		$this->form_validation->set_rules('nom','Nom','trim|required');
         $this->form_validation->set_rules('email','Email','trim|required|valid_email');
@@ -35,7 +34,7 @@ class appli_c extends CI_Controller {
                     $donnees= array(
                         'nom'=>$this->input->post('nom'),
                         'email'=>$this->input->post('email'),
-                        'mdp'=>$this->input->post('mdp'), //$this->encrypt->encode(  ; md5(
+                        'mdp'=>$this->input->post('mdp'), 
                         'idDroit'=>1
                     );
                     $this->application_m->add_user($donnees);

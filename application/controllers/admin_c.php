@@ -17,4 +17,5 @@ class Admin_c extends CI_Controller {
         $this->load->view('admin/admin_index',$donnees);
 		$this->load->view('pied',$donnees);
     }
+	
 }

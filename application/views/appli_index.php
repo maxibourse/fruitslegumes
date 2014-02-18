@@ -1,44 +1,37 @@
-<div id="container">
+<div id="container">	
+<div id="presentation">
+<?php
+	if (isset($erreur)) {
+		echo '<h4 id="erreur">Login/Mot de passe incorrect</h4>';
+	}
+?>
+<br/><br/><br/>
+
+<h3>Bienvenue aux Beau'Fruits & légumes</h3>
+</br>
+	<h4>
+		Vous aimez les fruits et les légumes ?
+		<br/><br/>
+		Venez les acheter chez votre Maraîcher preferé ! 
+		<br/><br/>
+		L'inscription est gratuite, alors n'hésitez pas
+		<br/>
+		les fruits et légumes ne mangent pas !
+	</h4>
+</div>
 
 <div id="slideshow">
   <ul>
     <li>
-      <img src="assets/js/images/oranges.jpg" alt="" />
+      <img src="/fruitslegumes/assets/js/images/oranges.jpg" alt="" />
     </li>
     <li>
-      <img src="assets/js/images/patates.jpg" alt="" />
+      <img src="/fruitslegumes/assets/js/images/patates.jpg" alt="" />
     </li>
     <li>           
-      <img src="assets/js/images/tomates.jpg" alt="" />
+      <img src="/fruitslegumes/assets/js/images/tomates.jpg" alt="" />
     </li>                          
   </ul>
 </div>
-<div>
-	<h1>Connexion</h1>
-		<?php if($titre):?>
-	    <?php echo form_open('appli_c/aff_connexion'); ?>
-	        <label class="formulaire" for="nom">Login :</label>
-	        <input class="inputformulaire" type="text" name="nom" value="<?php echo set_value('nom'); ?>" />
-	        <?php echo form_error('nom', '<span class="error">', "</span>"); ?>
-	        <br/>
-	        <label class="formulaire" for="mdp">Mot de passe :</label>
-	        <input class="inputformulaire" type="password" name="mdp" value="<?= set_value('mdp'); ?>" />
-	        <?php echo form_error('mdp', '<span class="error">', "</span>"); ?>
-	        <?php
-				if (isset($erreur))
-					echo '<span class="error">' . $erreur . "</span>";
-			?>
-	        <br/>
-	        <input class="bouton" type="submit" value="Connexion" />
-	
-	        <?php echo form_close(); ?>
-	        <p id="inscription"><?= anchor('appli_c/inscription', 'Inscrivez vous !') ?></p>
-	        <p id="oublier"><?= anchor('appli_c/mdp_oublie', 'Mot de passe oublié ?') ?></p>
-	    <?php endif ?>
-	    <?php if($titre=="deconnexion"):?>
-	        <?php echo form_open('appli_c/deconnexion'); ?>
-	        <input class="bouton" type="submit" value="Deconnexion" />
-	        <?php echo form_close(); ?>
-	    <?php endif ?>
-</div>
+
 </div>

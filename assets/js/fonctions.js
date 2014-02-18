@@ -21,5 +21,14 @@ $(document).ready(function() {
 			}
 		});
 	});
+	
+	$('.disponibilite').each(function(i) {
+			if($(this).html() == 0){
+				$(this).html('<img src="/fruitslegumes/assets/images/croix.png" alt="" />');
+			}
+			if($(this).html() == 1){
+				$(this).html('<img src="/fruitslegumes/assets/images/valide.jpg" alt="" />');
+			}
+	});
 });
 

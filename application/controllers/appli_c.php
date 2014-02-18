@@ -78,10 +78,9 @@ class appli_c extends CI_Controller {
             }
             else{
                 $donnees['erreur']="Mot de passe ou login incorrect";
-                $donnees['titre']="connexion";
             }
         }
-        $donnees['titre']="connexion";
+        $donnees['titre']="Connexion";
         // fin d'ajout et redirection
 		$this->load->view('entete',$donnees);
         $this->load->view('appli_index',$donnees);
@@ -132,7 +131,10 @@ class appli_c extends CI_Controller {
 
         }
         $donnees['titre']="mot de passe oublié";
+        $this->load->view('entete',$donnees);
         $this->load->view('application_mdp_oublie',$donnees);
+		$this->load->view('pied',$donnees);
+		
     }
 }
 

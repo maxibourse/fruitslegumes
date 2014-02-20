@@ -41,8 +41,9 @@ class Produit_m extends CI_Model{
 	{
 		
 		// requete à modifier
-		//select description from produits p, origine o where 1 = o.idOrigine AND p.designation = "Tomate";
-		$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
+		$requete = 'select description from produits p, origine o where 1 = o.idOrigine AND p.designation = "Tomate"';
+		//$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
+		$q=$this->query(requete);
 	
 		if($q->num_rows()>0)
 		{	

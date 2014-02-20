@@ -33,7 +33,8 @@ class Produit_c extends CI_Controller {
 public function ajouterProduit(){
 	
 	$this->form_validation->set_rules('designation','Designation','trim|required');
-	$this->form_validation->set_rules('commentaire','Commentaire','trim|required');
+	$this->form_validation->set_rules('description','description','trim|required');
+		$this->form_validation->set_rules('commentaire','Commentaire','trim|required');
 	$this->form_validation->set_rules('prix','Prix','trim|required');
 	$this->form_validation->set_rules('codeProduit','Code Produit','trim|required');
 	$this->form_validation->set_rules('idTypePrix','Type Produit','trim|required');
@@ -50,7 +51,7 @@ public function ajouterProduit(){
                         'codeProduit'=>$this->input->post('codeProduit'),
                         'idOrigine'=>$this->input->post('idOrigine'),
                         'disponible'=>$this->input->post('disponible'),
-                        'idCategorie'=>$this->input->post('idCategorie')
+                        'idCategorie'=>$this->input->post('idCategorie')                   
                     );
                     $this->produit_m->ajouterProduit($donnees);
                     redirect(base_url());

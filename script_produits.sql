@@ -95,6 +95,7 @@ CREATE TABLE UTILISATEUR(
 	mdp VARCHAR(30),
 	email VARCHAR(30),
 	idDroit INT NULL,
+	droitCommande boolean,
 	PRIMARY KEY(idUser)
 );
 
@@ -116,5 +117,5 @@ INSERT INTO PRODUITS VALUES('',"Patate","Elles sont bonnes mes patates ",0.78,1,
 INSERT INTO PRODUITS VALUES('',"Tomate","",5.78,2,101,2,1,1);
 INSERT INTO PRODUITS VALUES('',"Banane","",2,3,101,2,1,2);
 
-INSERT INTO UTILISATEUR VALUES('',"maxime","a","adresse@mail.com",1);
-INSERT INTO UTILISATEUR VALUES('',"nicolas","a","adresse@mail.com",2);
+INSERT INTO UTILISATEUR VALUES('',"maxime","a","adresse@mail.com",1,false);
+INSERT INTO UTILISATEUR VALUES('',"nicolas","a","adresse@mail.com",2,true);

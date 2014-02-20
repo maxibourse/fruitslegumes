@@ -35,7 +35,8 @@ class appli_c extends CI_Controller {
                         'nom'=>$this->input->post('nom'),
                         'email'=>$this->input->post('email'),
                         'mdp'=>$this->input->post('mdp'), 
-                        'idDroit'=>1
+                        'idDroit'=>1,
+                        'droitCommande'=>'false'
                     );
                     $this->application_m->add_user($donnees);
                     // fin d'ajout et redirection

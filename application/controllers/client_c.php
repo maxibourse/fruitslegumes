@@ -12,13 +12,9 @@ class Client_c extends CI_Controller {
             redirect('appli_c');
         }
         $donnees['titre']="Membre de l'association";
-		
-		if($this->client_m->getDroit($this->session->userdata('nom'))==0){
-			$donnees['droitCommande'] = 0;
-		}
-		else{
-			$donnees['droitCommande'] = 1;
-		}
+
+		$resultat = $this->client_m->getDroit();
+		$donnees['resultat'] = $resultat['droitCommande'];
 		
 		$this->load->view('entete',$donnees);
         $this->load->view('clients/client_index',$donnees);

@@ -7,23 +7,21 @@ class client_m extends CI_Model{
 		parent::__construct();
 	}
 	
-	function getDroit($donnees)
+	function getDroit()
 	{
-		$requete = 'SELECT droitCommande from utilisateur where nom="'.$donnees['nom'].'"';
+		$requete = 'SELECT droitCommande from utilisateur where nom="'.$this->session->userdata('nom').'"';
 				
 		$q=$this->db->query($requete);
 		
 		if($q->num_rows()>0)
 		{	
-			foreach($q->result() as $row)
+			foreach($q->result_array() as $row)
 			{
-				$donnees[] = $row;
+				$donnees = $row;
 				
 			}
-			return $donnees;
 		}
-		
-	
+		return $donnees;
 	}
 
 }

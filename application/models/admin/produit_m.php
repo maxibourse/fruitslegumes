@@ -39,8 +39,11 @@ class Produit_m extends CI_Model{
 		
 	function recup_origine()
 	{
-		$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
 		
+		// requete à modifier
+		//select description from produits p, origine o where 1 = o.idOrigine AND p.designation = "Tomate";
+		$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
+	
 		if($q->num_rows()>0)
 		{	
 			foreach($q->result() as $row)
@@ -55,6 +58,7 @@ class Produit_m extends CI_Model{
 	
 	function recup_categorie()
 	{
+		
 		$q=$this->db->select('idCategorie, nomCategorie')->from('categorie')->order_by('idCategorie', 'asc')->get();
 		
 		if($q->num_rows()>0)

@@ -2,7 +2,7 @@
 	Liste des produits
 	<br /><br />
 	<?php if($mesproduits !=null): ?>
-	<table border="2">
+	<table class="table table-striped" border="2">
 	
 	
 	<tr>

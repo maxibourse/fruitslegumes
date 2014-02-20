@@ -4,7 +4,7 @@
 		<?php if($resultat==1){ ?>
 			<a id="lien" href="<?php echo site_url('client/produit_c')?>">Passer une commande</a>
 		<?php }else{ ?>
-			Aucun droits
+			Vous n'êtes pas autorisé a commander, <a id="lien" href="<?php echo site_url('client/produit_c/demandeDroit')?>">Faire une demande</a>
 		<?php } ?>
 	</div>
 </div>

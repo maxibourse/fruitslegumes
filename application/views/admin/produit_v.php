@@ -29,4 +29,4 @@
 	</table>
 		<?php endif; ?>
 		<br><br>
-		<a href="<?php echo site_url('admin/produit_c/nouveau_produit')?>">Ajouter un produit</a>
+		<a class="bouton" href="<?php echo site_url('admin/produit_c/nouveau_produit')?>">Ajouter un produit</a>

@@ -39,8 +39,7 @@
 				<select class="inputformulaire" name='idCategorie'>
 				<?php foreach($categorie as $r3): ?>
 					<option value="<?=$r3 -> idCategorie ?>"><?= $r3 -> nomCategorie ?></option>
-				<?php endforeach; ?></select><br><br>	
-				</select>
+				<?php endforeach; ?></select><br>	
 				 
 			 	<input class="bouton" type='submit' value='Ajouter' name='ajoutProduit' >  
 		

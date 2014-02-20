@@ -20,25 +20,25 @@
 				<label class="formulaire"> Type prix </label> 
 				<select class="inputformulaire" name='idTypePrix'>
 				<?php foreach($typePrix as $r1): ?>
-					<option><?=$r1 -> idTypePrix ." - ". $r1 -> designation ?></option>
+					<option value="<?=$r1 -> idTypePrix ?>"><?=$r1 -> designation ?></option>
 				<?php endforeach; ?></select><br><br> 
 				
 				<label class="formulaire"> Origine </label> 
 				<select class="inputformulaire" name='idOrigine'>
 				<?php foreach($origine as $r2): ?>
-					<option><?=$r2 -> idOrigine ." - ". $r2 -> description ?></option>
+					<option value="<?=$r2 -> idOrigine ?>"><?=$r2 -> description ?></option>
 				<?php endforeach; ?></select><br><br>	
 				</select>
 				
 				<label class="formulaire"> Disponible </label> <select class="inputformulaire" name='disponible'>
-					<option>1 <?= '- Oui ' ?></option>
-					<option>0 <?= '- Non ' ?></option>
+					<option value="1"><?= 'Oui' ?></option>
+					<option value="0"><?= 'Non' ?></option>
 				</select> <br> <br> 
 				
 				<label class="formulaire"> Catégorie </label> 
 				<select class="inputformulaire" name='idCategorie'>
 				<?php foreach($categorie as $r3): ?>
-					<option><?=$r3 -> idCategorie ." - ". $r3 -> nomCategorie ?></option>
+					<option value="<?=$r3 -> idCategorie ?>"><?= $r3 -> nomCategorie ?></option>
 				<?php endforeach; ?></select><br><br>	
 				</select>
 				 

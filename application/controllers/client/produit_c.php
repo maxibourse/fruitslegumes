@@ -27,7 +27,7 @@ class Produit_c extends CI_Controller {
 
 		if($this->form_validation->run()){
 			 $this->email->from($this->client_m->get_email_vendeur);
-             $this->email->to($this->client_m->get_email_client($this -> session -> userdata('nom')));
+             $this->email->to($this->client_m->get_email_client($this->session-> userdata('nom')));
              $this->email->subject('Demande de droits');
              $this->email->message($this->input->post('raison'));
              $this->email->send();

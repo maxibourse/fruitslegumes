@@ -48,6 +48,7 @@
 	            </div>
 	            <button type="submit" class="btn btn-success">Connexion</button>
 	            <button class="btn btn-success2"><?= anchor('appli_c/inscription', 'Inscription', $attributes2) ?></button>
+	           <?= anchor('appli_c/mdp_oublie', 'Mot de passe oublié ?',$attributes2) ?>
             <?php endif; ?>
 	    <?php echo form_close(); ?>
 	    <?php endif; ?>

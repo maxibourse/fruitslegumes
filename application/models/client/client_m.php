@@ -9,7 +9,7 @@ class client_m extends CI_Model{
 	
 	function getDroit($donnees)
 	{
-		$requete = 'SELECT droitCommande from utilisateur where nom="'.$donnees[nom].'"';
+		$requete = 'SELECT droitCommande from utilisateur where nom="'.$donnees['nom'].'"';
 				
 		$q=$this->db->query($requete);
 		

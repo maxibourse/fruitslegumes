@@ -5,7 +5,7 @@ class Admin_c extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('application_m');
-        //$this->user = ($this->sitemodel->is_logged()) ? $this->sitemodel->get_user($this->session->userdata('lastname')) : false;
+      
     }
     public function index()
     {

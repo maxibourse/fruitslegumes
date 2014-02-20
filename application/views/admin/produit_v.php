@@ -21,7 +21,7 @@
 		<td width="30%" align="center"><?=$r -> commentaire ?></td>
 		<td width="10%" align="center"><?=$r -> prix ." €"?></td>
 		<td width="10%" align="center"><?=$r -> codeProduit ?></td>
-		<td width="10%" align="center"><?=$r -> idOrigine ?></td>
+		<td width="10%" align="center" value="<?=$r -> idOrigine ?>"><?=$r -> description ?></td>
 		
 		
 	</tr>

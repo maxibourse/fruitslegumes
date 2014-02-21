@@ -51,4 +51,21 @@ class Application_m extends CI_Model {
         else
             return false;
     }
+	
+	public function getDetailCommande($idCommande)
+    {
+        $sql = "select idCommande,p.designation as nomProduit,quantite,pc.prix,t.designation from produitscommandes pc,produits p,typeprix t where pc.idProduit = p.idProduit and pc.idTypePrix = t.idTypePrix and pc.idCommande=".$idCommande;
+        
+		$q=$this->db->query($sql);
+		
+		if($q->num_rows()>0)
+		{	
+			foreach($q->result() as $row)
+			{
+				$donnees[] = $row;
+				
+			}
+			return $donnees;
+		}
+    }
 }

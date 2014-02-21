@@ -11,17 +11,19 @@
 				<th class="centrer cellAchat">Semaine</th>
 				<th class="centrer cellAchat">Prix total</th>
 				<th class="centrer cellAchat">Lieu</th>
+				<th class="centrer cellAchat">Détails</th>
 			</tr>
 			
 			<?php foreach($mescommandes as $commande):?>
 		
-				<?php echo form_open('client/shop_c/update');?>				
+				<?php echo form_open('client/produit_c/getDetail');?>				
 					<tr>
-						<td><?php echo $commande['idCommande'];?></td>
-						<td><?php echo $commande['dateCommande'];?> €</td>
-						<td><?php echo $commande['idSemaine'];?></td>
-						<td><?php echo $commande['prixTotal'];?></td>
-						<td><?php echo $commande['nomLieu'];?></td>
+						<input type="hidden" name="idCommande" value="<?php echo $commande->idCommande;?>"/>
+						<td><?php echo $commande->idCommande;?></td>
+						<td><?php echo $commande->dateCommande;?></td>
+						<td><?php echo $commande->idSemaine;?></td>
+						<td><?php echo $commande->prixTotal;?> €</td>
+						<td><?php echo $commande->nomLieu;?></td>
 
 						<td><input type="submit" value="Details" />
 					<tr/>

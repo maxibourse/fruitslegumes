@@ -40,6 +40,16 @@ class Produit_c extends CI_Controller {
 
 
 	}
+	
+	public function getDetail(){
+		$donnees = $this->input->post('idCommande');
+		$detail['details'] = $this->application_m->getDetailCommande($donnees);
+		
+		$donnees = array('titre' => 'Détails commande', 'contenu' => 'client/produit_v');
+		$this -> load -> view('entete', $donnees);
+		$this -> load -> view('clients/client_detail', $detail);
+		$this -> load -> view('pied', $donnees);
+	}
 
 }
 ?>

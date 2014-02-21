@@ -7,6 +7,7 @@ class appli_c extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->model('application_m');
+		$this->load->library('cart');
 	}
 	
 	public function index()
@@ -108,14 +109,15 @@ class appli_c extends CI_Controller {
     public function mdp_oublie()
     {
         /* rappeler la vue à la fin de la méthode */
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email');
+        
         if($this->form_validation->run()){
             $this->email->from($this->client_m->get_email_vendeur());
-            $this->email->to($this->client_m->get_email_client());
+            $this->email->to($this->input->post('email'));
             $this->email->subject('Votre mot de passe');
-            $this->email->message('<p>Voici votre nouveau mot de passe </p><strong></strong> Ne le perdez plus !');
+            $this->email->message('Voici votre mot de passe "<strong>'.$this->client_m->get_mdp_client($this->input->post('email')).'</strong>"<br/> Ne le perdez plus !');
             $this->email->send();
-            //fin d'ajout et redirection
-            redirect(base_url());
+			$donnees['message']="Votre mot de passe vous a été envoyé par mail";
         }
         $donnees['titre']="Mot de passe oublié";
         $this->load->view('entete',$donnees);

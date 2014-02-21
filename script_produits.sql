@@ -115,7 +115,7 @@ INSERT INTO LIEU VALUES('',"Marché des Vosges");
 
 INSERT INTO PRODUITS VALUES('',"Patate","Elles sont bonnes mes patates ",0.78,1,100,1,0,1);
 INSERT INTO PRODUITS VALUES('',"Tomate","",5.78,2,101,2,1,1);
-INSERT INTO PRODUITS VALUES('',"Banane","",2,3,101,2,1,2);
+INSERT INTO PRODUITS VALUES('',"Banane","",2,3,102,2,1,2);
 
 INSERT INTO UTILISATEUR VALUES('',"maxime","a","pilot.max@hotmail.fr",1,false);
 INSERT INTO UTILISATEUR VALUES('',"nicolas","a","Max25190@gmail.com",2,true);

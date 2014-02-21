@@ -17,6 +17,8 @@
 	        		<textarea rows="6" class="form-control control2" placeholder="Ecrivez quelques lignes..." name="raison"></textarea>
 	        	</div>
 	        </div>
+	         <?php if(isset($message)) echo '<br/>'.$message.'<br/>' ?>
+
 	        <br/>
 	        <div class="col-sm-2 control-label">
 	        	<input type="submit" class="btn btn-default" value="Envoyer" />

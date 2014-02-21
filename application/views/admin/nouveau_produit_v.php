@@ -13,7 +13,7 @@
 				
 				<label class="formulaire">Code produit </label> 
 				<input class="inputformulaire" type='text' value='' name='codeProduit' value="<?php echo set_value('codeProduit'); ?>"> <br> <br> 
-								
+												
 				<label class="formulaire">Prix </label> 
 				<input class="inputformulaire" type='text' value='' name='prix' value="<?php echo set_value('prix'); ?>"> <br> <br />
 				

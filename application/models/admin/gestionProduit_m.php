@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Produit_m extends CI_Model{
+class GestionProduit_m extends CI_Model{
 	
 	function __construct()
 	{
@@ -9,7 +9,8 @@ class Produit_m extends CI_Model{
 	
 	function get_all()
 	{
-		$q=$this->db->select('*')->from('produits')->order_by('designation', 'desc')->get();
+		$requete = 'select * from produits, origine';
+		$q=$this->db->query($requete);
 		
 		if($q->num_rows()>0)
 		{	
@@ -40,10 +41,9 @@ class Produit_m extends CI_Model{
 	function recup_origine()
 	{
 		
-		// requete à modifier
 		$requete = 'select description from produits p, origine o where "'.$donnees['idOrigine'].'" = o.idOrigine AND p.idProduit = "'.$donnees['idProduit'].'"';
 		//$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
-		$q=$this->query(requete);
+		$q=$this->db->query(requete);
 	
 		if($q->num_rows()>0)
 		{	

@@ -46,5 +46,4 @@
 		</div>
         <?php echo form_close(); ?>
         <br/>
-        <a href="mdp_oublie">Mot de passe oublié ?</a>
 </div>

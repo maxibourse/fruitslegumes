@@ -49,5 +49,9 @@
 	</table>
 		<?php endif; ?>
 		<br><br>
+<<<<<<< HEAD
 		<a class="bouton" href="<?php echo site_url('admin/gestionProduit_c/nouveau_produit')?>">Ajouter un produit</a>
 </form>
+=======
+		<a class="bouton bleu" href="<?php echo site_url('admin/gestionProduit_c/nouveau_produit')?>">Ajouter un produit</a>
+>>>>>>> 197228ea33a004951099e966838f1345819311cc

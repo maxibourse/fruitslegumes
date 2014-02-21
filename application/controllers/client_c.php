@@ -15,6 +15,7 @@ class Client_c extends CI_Controller {
 
 		$resultat = $this->client_m->getDroit();
 		$donnees['resultat'] = $resultat['droitCommande'];
+		$donnees['mescommandes'] = $this -> produitClient_m -> get_allCommandes();
 		
 		$this->load->view('entete',$donnees);
         $this->load->view('clients/client_index',$donnees);

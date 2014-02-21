@@ -7,6 +7,7 @@ class appli_c extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->model('application_m');
+		$this->load->library('cart');
 	}
 	
 	public function index()
@@ -107,27 +108,16 @@ class appli_c extends CI_Controller {
     }
     public function mdp_oublie()
     {
-        $this->form_validation->set_rules('email','Email','trim|required|valid_email');
         /* rappeler la vue à la fin de la méthode */
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email');
+        
         if($this->form_validation->run()){
-            if($this->application_m->test_email($this->input->post('email'))){
-                {
-                    $donnees= array(
-                        'email'=>$this->input->post('email')
-                    );
-                    $this->email->from('pilot.max@hotmail.fr','Mon site');
-                    $this->email->to($this->input->post('email'),'Mot de passe oublié');
-                    $this->email->subject('Votre mot de passe');
-                    $this->email->message('<p>Voici un nouveau de passe </p>....');
-                    $this->email->send();
-                    //fin d'ajout et redirection
-                    redirect(base_url());
-                }
-            }
-            else{
-                $donnees['erreur']="Cet email n'existe pas";
-            }
-
+            $this->email->from($this->client_m->get_email_vendeur());
+            $this->email->to($this->input->post('email'));
+            $this->email->subject('Votre mot de passe');
+            $this->email->message('Voici votre mot de passe "<strong>'.$this->client_m->get_mdp_client($this->input->post('email')).'</strong>"<br/> Ne le perdez plus !');
+            $this->email->send();
+			$donnees['message']="Votre mot de passe vous a été envoyé par mail";
         }
         $donnees['titre']="Mot de passe oublié";
         $this->load->view('entete',$donnees);

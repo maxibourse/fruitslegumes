@@ -9,7 +9,10 @@ class GestionProduit_m extends CI_Model{
 	
 	function get_all()
 	{
-		$requete = 'select * from produits, origine';
+		$requete = 'SELECT commentaire,codeProduit,nomCategorie,p.designation,description,prix,t.designation
+		 AS typeprix,disponible FROM PRODUITS p,CATEGORIE c,ORIGINE o,TYPEPRIX t 
+		 WHERE c.idCategorie = p.idCategorie AND o.idOrigine = p.idOrigine AND t.idTypePrix=p.idTypePrix;';
+		 
 		$q=$this->db->query($requete);
 		
 		if($q->num_rows()>0)
@@ -41,9 +44,9 @@ class GestionProduit_m extends CI_Model{
 	function recup_origine()
 	{
 		
-		$requete = 'select description from produits p, origine o where "'.$donnees['idOrigine'].'" = o.idOrigine AND p.idProduit = "'.$donnees['idProduit'].'"';
-		//$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
-		$q=$this->db->query(requete);
+		//$requete = 'select description from produits p, origine o where "'.$donnees['idOrigine'].'" = o.idOrigine AND p.idProduit = "'.$donnees['idProduit'].'"';
+		$q=$this->db->select('idOrigine, description')->from('origine')->order_by('idOrigine', 'asc')->get();
+		//$q=$this->db->query(requete);
 	
 		if($q->num_rows()>0)
 		{	

@@ -31,6 +31,10 @@ class GestionProduit_c extends CI_Controller {
 		
 	}
 
+public function supprimerProduit(){
+	echo "coucou";
+}
+
 public function ajouterProduit(){
 	
 	$this->form_validation->set_rules('designation','Designation','trim|required');
@@ -54,7 +58,7 @@ public function ajouterProduit(){
                         'idCategorie'=>$this->input->post('idCategorie')                   
                     );
                     $this->gestionProduit_m->ajouterProduit($donnees);
-                    redirect(base_url());
+                    redirect(base_url('index.php/admin/gestionProduit_c'));
 
         }
 		$this->load->view('entete',$donnees);

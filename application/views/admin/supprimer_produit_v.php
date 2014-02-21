@@ -1,0 +1,1 @@
+<?php echo form_open('admin/gestionProduit_c/supprimerProduit'); ?>

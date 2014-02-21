@@ -110,7 +110,8 @@ $autoload['language'] = array();
 */
 
 
-$autoload['model'] = array('application_m', 'admin/gestionProduit_m', 'client/produitClient_m','client/client_m', 'admin/gestionClient_m', 'admin/commande_m');
+$autoload['model'] = array('application_m', 'admin/gestionProduit_m', 'client/produitClient_m',
+'client/client_m', 'admin/gestionClient_m', 'admin/commande_m', 'admin/gestionLieux_m', 'admin/gestionPays_m');
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

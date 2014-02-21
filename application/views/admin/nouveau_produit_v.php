@@ -3,7 +3,7 @@
 	<link href="<?php echo base_url()?>dist/css/moncss.css" rel="stylesheet">
 
 	<h1> Ajouter un nouveau produit </h1> 
-	<?php echo form_open('admin/produit_c/ajouterProduit'); ?>
+	<?php echo form_open('admin/gestionProduit_c/ajouterProduit'); ?>
 		<form>
 				<label class="formulaire"> Nom du produit </label> 
 				<input class="inputformulaire" type='text' value='' name='designation' value="<?php echo set_value('designation'); ?>">
